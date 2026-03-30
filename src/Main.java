@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<s_obj> array = new ArrayList<s_obj>();
 
-        // Load data
+        // Creates s_obj objects and adds grades for the students
         s_obj student1 = new s_obj("Alice", 101);
         student1.add(85);
         student1.add(90);
@@ -24,7 +24,7 @@ public class Main {
         student3.add(65);
         array.add(student3);
 
-        // DOING THE MATH AND PRINTING ALL AT ONCE
+        // Finding the letter grade of the students
         for(int i = 0; i < array.size(); i++) {
             s_obj temp = array.get(i);
             double gradeNum = temp.getVal();
@@ -48,7 +48,7 @@ public class Main {
             System.out.println("ID: " + temp.idNum + " | Name: " + temp.name + " | Avg: " + gradeNum + " | Grade: " + grade);
         }
 
-        // FINDING THE BEST STUDENT
+        // Finding which student has the best grades
         double best = -1;
         String name = "";
         for (s_obj i : array) {
@@ -59,7 +59,7 @@ public class Main {
         }
         System.out.println("Top: " + name + " with " + best);
 
-        // FINDING FAILING STUDENTS
+        // finds which students are failing
         System.out.println("Needs Help:");
         for(s_obj i : array) {
             if(i.getVal() < 70) {
